@@ -33,14 +33,12 @@ var twitter = new Twit({
 var stream;
 var searchTerm;
 
-stream = twitter.stream('statuses/filter', { track: 'cnn'});
-
 //creates socket
 io.on('connect', function(socket) {
   socket.on('updatedTerm', function(searchTerm) {
     socket.emit('updatedTerm', searchTerm);
 
-    //stop stream if already running
+    //Reset stream for new search
     if(stream) {
       stream.stop();
     }
@@ -49,6 +47,7 @@ io.on('connect', function(socket) {
 
     //gets info from Twitter
     stream.on('tweet', function(tweet) {
+      console.log(tweet);
       var data = {};
       data.name = tweet.user.name;
       data.screen_name = tweet.user.screen_name;

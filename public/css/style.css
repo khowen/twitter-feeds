@@ -1,0 +1,55 @@
+:focus {
+  outline: none;
+}
+
+body {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  color: #333;
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  text-transform: capitalize;
+}
+
+input[type~="submit"] {
+  border: 1px solid gray;
+  background-color: transparent;
+  border-radius: 0;
+  padding: 1em;
+}
+
+#user-search {
+  padding: 1em;
+  border: 1px solid gray;
+  background-color: transparent;
+}
+
+.tweet-wrapper {
+  padding: 2em;
+  background: #eee;
+  border-bottom: 1px solid gray;
+
+}
+
+.profile-image {
+}
+
+.profile-image img {
+  /*height: auto;
+  width: 20%*/;
+}
+
+.user-name {
+  font-weight: 300;
+}
+
+.user-handle {
+  font-weight: 300;
+}
+
+.tweet-text {
+
+}

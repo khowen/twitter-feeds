@@ -12,7 +12,9 @@ var twitter = new Twit({
   access_token: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
-console.log(twitter);
+// console.log(twitter);
+
+var stream = twitter.stream('statuses/filter', { track: 'javascript'});
 
 app.set('views', './views');
 app.set('view engine', 'jade');
@@ -26,4 +28,10 @@ router.get('/', function(req, res) {
 app.use('/', router);
 server.listen(port);
 console.log('Server started on', port);
+
 var io = require('socket.io')(server);
+io.on('connect', function(socket) {
+  stream.on('tweet', function(tweet) {
+    socket.emit('tweets', tweet);
+  });
+});

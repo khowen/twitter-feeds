@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 title
+  -var socket = io();
+  -socket.on('connect', function() {
+    -console.log('Connected!');
+  -});
+  -socket.on('tweets', function(tweet) {
+    -console.log(tweet);
+  -});
+

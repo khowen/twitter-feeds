@@ -6,6 +6,14 @@ var router  = express.Router();
 var server  = require('http').createServer(app);
 var Twit    = require('twit');
 
+var twitter = new Twit({
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token: process.env.TWITTER_ACCESS_TOKEN,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
+console.log(twitter);
+
 app.set('views', './views');
 app.set('view engine', 'jade');
 
@@ -15,7 +23,7 @@ router.get('/', function(req, res) {
   res.render('index', { title: 'Twitter Search' });
 });
 
-app.user('/', router);
+app.use('/', router);
 server.listen(port);
 console.log('Server started on', port);
 var io = require('socket.io')(server);

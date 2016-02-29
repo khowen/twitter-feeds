@@ -6,16 +6,8 @@
   "scripts": {
     "start": "node app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/khowen/twitter-feeds.git"
-  },
   "author": "Katie Owen",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/khowen/twitter-feeds/issues"
-  },
-  "homepage": "https://github.com/khowen/twitter-feeds#readme",
   "dependencies": {
     "express": "^4.13.4",
     "jade": "^1.11.0",

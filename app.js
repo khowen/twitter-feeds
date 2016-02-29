@@ -8,8 +8,9 @@ var server  = require('http').createServer(app);
 app.set('views', './views');
 app.set('view engine', 'jade');
 
+//middleware
 app.use(morgan('dev'));
-app.use('/static', express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 router.get('/', function(req, res) {
   res.render('index', { title: 'Twitter Search' });
@@ -19,6 +20,7 @@ app.use('/', router);
 server.listen(port);
 console.log('Server started on', port);
 
+//integrate socket.io
 var io = require('socket.io')(server);
 var Twit    = require('twit');
 var twitter = new Twit({
@@ -27,19 +29,32 @@ var twitter = new Twit({
   access_token: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
-console.log(twitter);
+// console.log(twitter);
+var stream;
+var searchTerm;
 
-var stream = twitter.stream('statuses/filter', { track: 'mariah_carey'});
-console.log('STREAM', stream);
+stream = twitter.stream('statuses/filter', { track: 'cnn'});
 
-io.on('connect', function(socket) {//creates socket
-  stream.on('tweet', function(tweet) { //gets info from Twitter
-    var data = {};
-    data.name = tweet.user.name;
-    data.screen_name = tweet.user.screen_name;
-    data.text = tweet.text;
-    data.user_profile_image = tweet.user.profile_image_url;
-    socket.emit('tweets', data); //send tweets to front end
-    console.log(data);
+//creates socket
+io.on('connect', function(socket) {
+  socket.on('updatedTerm', function(searchTerm) {
+    socket.emit('updatedTerm', searchTerm);
+
+    //stop stream if already running
+    if(stream) {
+      stream.stop();
+    }
+
+    stream = twitter.stream('statuses/filter', { track: searchTerm, language: 'en'});
+
+    //gets info from Twitter
+    stream.on('tweet', function(tweet) {
+      var data = {};
+      data.name = tweet.user.name;
+      data.screen_name = tweet.user.screen_name;
+      data.text = tweet.text;
+      data.user_profile_image = tweet.user.profile_image_url;
+      socket.emit('tweets', data); //send tweets to front end
+    });
   });
 });

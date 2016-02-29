@@ -2,12 +2,10 @@ extends layout
 
 block content
   h1= title
+  form(action="/" name="search")
+    input(type="text" id="user-search" required)
+    input(type="submit")
   #tweet-container
 
-  script.
-    var socket = io()
-    socket.on('tweets', function(tweet) {
-      var html = '<div><img src="' + tweet.user_profile_image + '" /><div>' + tweet.name + ' @' +tweet.screen_name + ' ' + tweet.text + '</div>'
-      $('#tweet-container').prepend(html)
-    })
+
 

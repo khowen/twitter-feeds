@@ -4,6 +4,7 @@ var app     = express();
 var port    = process.env.PORT || 3000;
 var router  = express.Router();
 var server  = require('http').createServer(app);
+var Twit    = require('twit');
 
 app.set('views', './views');
 app.set('view engine', 'jade');

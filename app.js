@@ -29,7 +29,7 @@ var twitter = new Twit({
 });
 console.log(twitter);
 
-var stream = twitter.stream('statuses/filter', { track: 'drake'});
+var stream = twitter.stream('statuses/filter', { track: 'mariah_carey'});
 console.log('STREAM', stream);
 
 io.on('connect', function(socket) {//creates socket

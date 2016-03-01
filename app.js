@@ -5,6 +5,7 @@ var port    = process.env.PORT || 3000;
 var router  = express.Router();
 var server  = require('http').createServer(app);
 
+//views
 app.set('views', './views');
 app.set('view engine', 'jade');
 
@@ -12,12 +13,14 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
-//Routes
+//routes
 router.get('/', function(req, res) {
   res.render('index', { title: 'Twitter Search' });
 });
 
 app.use('/', router);
+
+//port
 server.listen(port);
 console.log('Server started on', port);
 
@@ -39,11 +42,12 @@ io.on('connect', function(socket) {
   socket.on('updatedTerm', function(searchTerm) {
     socket.emit('updatedTerm', searchTerm);
 
-    //Reset stream for new search term
+    //reset stream for new search term
     if(stream) {
       stream.stop();
     }
 
+    //opens new stream & searchs based on user input
     stream = twitter.stream('statuses/filter', { track: searchTerm, language: 'en'});
 
     //gets info from Twitter & starts new stream
@@ -54,7 +58,9 @@ io.on('connect', function(socket) {
       data.screen_name = tweet.user.screen_name;
       data.text = tweet.text;
       data.user_profile_image = tweet.user.profile_image_url;
-      socket.emit('tweets', data); //send tweets to front end
+
+      //send tweets to front end
+      socket.emit('tweets', data);
     });
   });
 });

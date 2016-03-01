@@ -45,6 +45,10 @@ Search Twitter using the Twitter API, Socket.io, and Twit!
 ![Heroku](http://cdn2.cloudpro.co.uk/sites/cloudprod7/files/logo-developer-heroku.png)
 ![Twitter API](https://www.apichangelog.com/static/img/logos/twitter-128.png)
 ![Express.js](https://webslinder.com/public/imgs/logo/express.png)
+![HTML5](https://cdn0.iconfinder.com/data/icons/HTML5/128/HTML_Logo.png)
+![CSS3](http://www.myiconfinder.com/uploads/iconsets/128-128-8b61de4c84033266e15317a6eb9fda2d-css3.png)
+![Javascript](http://www.americanmediatraining.com/images/amt_javascriptbox.png)
+![jQuery](http://antoniodelvalle.net/images/logos/jquery-logo.png)
 Twit
 
 

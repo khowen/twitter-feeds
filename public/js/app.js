@@ -2,6 +2,16 @@
   var socket = io(); //initialize socket.io connection
   var error  = ''; //used for displaying errors to user
 
+  //Display instructions on how to use the app on load
+  $('.instructions').animate({
+    'opacity': 1
+  }, 2000);
+
+  //socket error or disconnect
+  // socket.on('event', function(data) { console.log('event:', data); });
+  // socket.on('disconnect', function() { console.log('disconnected'); });
+
+
   //construct tweets to show user
   socket.on('tweets', function(tweet) {
     // console.log(tweet);
@@ -14,6 +24,11 @@
 
   $('form').on('submit', function(e) {
     e.preventDefault();
+
+    //Remove user instructions.
+    $('.instructions').animate({
+      'opacity': 0
+    });
 
     //search terms need to be lowercase
     var search_term = $('input').val().toLowerCase();

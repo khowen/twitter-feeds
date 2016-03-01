@@ -57,6 +57,11 @@ button:hover {
   border-bottom: 3px solid red;
 }
 
+.instructions {
+  opacity: 0;
+  color: #333;
+}
+
 /*Tweet Containers*/
 #tweet-container {
   margin-top: 5%;

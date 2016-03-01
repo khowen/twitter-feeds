@@ -7,7 +7,7 @@ Search Twitter using the Twitter API, Socket.io, and Twit!
 1. `git clone https://github.com/khowen/twitter-feeds`
 2. `cd twitter-feeds`
 3. `npm install`
-4. [Twitter registration for keys](markdown-header-register-for-twitter-api-keys)
+4. [Twitter registration for keys](https://github.com/khowen/twitter-feeds#register-for-twitter-api-keys)
 5. Open/create .zshrc file
 
   `subl ~/.zshrc` | `touch ~/.zshrc`

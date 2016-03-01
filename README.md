@@ -1,18 +1,18 @@
 #Twitter Feeds
 Search Twitter using the Twitter API, Socket.io, and Twit!
 
-###Deployed Demo:
-`![Twitter Feed Demo - Heroku](https://twitter-feeds-challenge.herokuapp.com/)`
+####[Deployed Demo](https://twitter-feeds-challenge.herokuapp.com/)
 
 ###Running The Program:
-1. Git clone https://github.com/khowen/twitter-feeds
-2. npm install
-3. [Twitter registration for keys](https://github.com/khowen/twitter-feeds#register-for-twitter-api-keys)
-4. Open/create .zshrc file
+1. `git clone https://github.com/khowen/twitter-feeds`
+2. `cd twitter-feeds`
+3. `npm install`
+4. [Twitter registration for keys](https://github.com/khowen/twitter-feeds#register-for-twitter-api-keys)
+5. Open/create .zshrc file
 
-  `subl ~/.zshrc`
+  `subl ~/.zshrc` | `touch ~/.zshrc`
 
-5. Add consumer and access token keys to the .zshrc file using this code and replacing APP KEY with registered keys.
+6. Add consumer and access token keys to the .zshrc file using this code and replacing APP KEY with registered keys.
 
 
 ```
@@ -25,13 +25,7 @@ export TWITTER_ACCESS_TOKEN='APP_KEY'
 export TWITTER_ACCESS_TOKEN_SECRET='APP_KEY'
 ```
 
-5. Before `npm start`, run this command in terminal.
-
-  (Note: This command **must** be run in the same terminal window as `npm start`.)
-
-  `source ~/.zshrc`
-6. `npm start`
-7. Inside the twitter-feeds directory, `npm install`.
+7. Before `npm start`, run `source ~/.zshrc` in terminal.(Note: This command **must** be run in the same terminal window as `npm start`.)
 8. `npm start`
 9. Navigate to localhost:3000
 

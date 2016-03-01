@@ -2,9 +2,11 @@ extends layout
 
 block content
   h1= title
-  form(action="/" name="search")
-    input(type="text" id="user-search" required)
-    input(type="submit")
+  form(action='/' name='search')
+    input(type='text' id='user-search' placeholder='CNN' required)
+    button(type='submit')
+      i(class='material-icons') send
+  p.error
   #tweet-container
 
 

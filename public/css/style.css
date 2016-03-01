@@ -6,60 +6,100 @@ body {
   width: 70%;
   margin: 10% auto 0 auto;
   text-align: center;
-  color: #333;
-  font-family: 'Lato', sans-serif;
+  color: #616161;
+  font-family: 'Roboto', sans-serif;
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 h1 {
   text-transform: capitalize;
+  font-weight: 300;
+  font-size: 4em;
 }
 
-input[type~="submit"] {
-  border: 1px solid gray;
-  background-color: transparent;
+button {
+  border: none;
+  background-color: #616161;
+  color: #fff;
   border-radius: 0;
   padding: .55em;
   font-size: 1em;
+  vertical-align: middle;
+  margin-left: 1%;
   -moz-transition: all ease .2s;
   -webkit-transition: all ease .2s;
   -o-transition: all ease .2s;
   transition: all ease .2s;
 }
 
-input[type~="submit"]:hover {
-  background: #eee;
+button:hover {
+  background-color: red;
+}
+
+#tweet-container {
+  margin-top: 5%;
 }
 
 #user-search {
-  padding: 1em;
-  border: 1px solid gray;
+  padding: .75em;
+  border: none;
+  border-bottom: 3px solid #616161;
   background-color: transparent;
+  vertical-align: bottom;
+  font-size: 1.2em;
+  color: #616161;
+  -moz-transition: all linear .2s;
+  -webkit-transition: all linear .2s;
+  -o-transition: all linear .2s;
+  transition: all linear .2s;
+}
+
+#user-search:focus {
+  border-bottom: 3px solid red;
 }
 
 .tweet-wrapper {
   padding: 1.5em;
-  background: #eee;
-  border-bottom: 1px solid gray;
+  background: #fff;
+  border: 1px solid #616161;
+  overflow: hidden;
+}
+
+.tweet-wrapper span {
+  float: left;
+  text-align: left;
+  margin-left: 2%;
+  width: 80%;
 }
 
 .profile-image {
+  vertical-align: middle;
+  overflow: hidden;
+  border-radius: 100%;
+  float: left;
+  height: 3em;
+  width: 3em;
 }
 
 .profile-image img {
   height: auto;
-  width: 10%;
+  width: 100%;
 }
 
 .user-name {
   margin: 0 auto;
+  font-weight: 700;
+  font-size: 1em;
 }
 
 .user-handle {
   margin: 0 auto 1% auto;
+  font-weight: 700;
+  font-size: 1em;
 }
 
 .tweet-text {
-  width: 50%;
-  margin: 0 auto;
-  font-weight: 300;
+  font-style: italic;
 }

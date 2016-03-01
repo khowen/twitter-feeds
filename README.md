@@ -7,7 +7,7 @@ Search Twitter using the Twitter API, Socket.io, and Twit!
 1. `git clone https://github.com/khowen/twitter-feeds`
 2. `cd twitter-feeds`
 3. `npm install`
-4. [Twitter registration for keys](https://github.com/khowen/twitter-feeds#register-for-twitter-api-keys)
+4. [Twitter registration for keys](#register-for-twitter-api-keys)
 5. Open/create .zshrc file
 
   `subl ~/.zshrc` | `touch ~/.zshrc`
@@ -15,15 +15,15 @@ Search Twitter using the Twitter API, Socket.io, and Twit!
 6. Add consumer and access token keys to the .zshrc file using this code and replacing APP KEY with registered keys.
 
 
-```
-export PATH="$PATH:$HOME/.rvm/bin"
-# Add RVM to PATH for scripting
+  ```
+  export PATH="$PATH:$HOME/.rvm/bin"
+  # Add RVM to PATH for scripting
 
-export TWITTER_CONSUMER_KEY='APP_KEY'
-export TWITTER_CONSUMER_SECRET='APP_KEY'
-export TWITTER_ACCESS_TOKEN='APP_KEY'
-export TWITTER_ACCESS_TOKEN_SECRET='APP_KEY'
-```
+  export TWITTER_CONSUMER_KEY='APP_KEY'
+  export TWITTER_CONSUMER_SECRET='APP_KEY'
+  export TWITTER_ACCESS_TOKEN='APP_KEY'
+  export TWITTER_ACCESS_TOKEN_SECRET='APP_KEY'
+  ```
 
 7. Before `npm start`, run `source ~/.zshrc` in terminal.(Note: This command **must** be run in the same terminal window as `npm start`.)
 8. `npm start`

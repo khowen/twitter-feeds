@@ -57,3 +57,5 @@ io.on('connect', function(socket) {
     });
   });
 });
+
+module.exports = app;

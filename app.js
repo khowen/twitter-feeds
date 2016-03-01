@@ -1,7 +1,7 @@
 var morgan  = require('morgan');
 var express = require('express');
 var app     = express();
-var port    = process.env.PORT || 3000;
+var port    = process.env.PORT || 3001;
 var router  = express.Router();
 var server  = require('http').createServer(app);
 

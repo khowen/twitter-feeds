@@ -6,7 +6,7 @@
     var userImage = '<div class="profile-image"><img src="' + tweet.user_profile_image + '" /></div>';
     var userName = '<p class="user-name">' + tweet.name + '</p><p class="user-handle"> @' +tweet.screen_name + '</p>';
     var tweetText = '<p class="tweet-text">' + tweet.text + '</p>';
-    var html = '<div class="tweet-wrapper">' + userName + tweetText + userImage + '</div>';
+    var html = '<div class="tweet-wrapper">' + userName + userImage + tweetText + '</div>';
     $('#tweet-container').prepend(html)
   });
 

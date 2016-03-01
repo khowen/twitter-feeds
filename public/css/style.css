@@ -4,7 +4,7 @@
 
 body {
   width: 70%;
-  margin: 0 auto;
+  margin: 10% auto 0 auto;
   text-align: center;
   color: #333;
   font-family: 'Lato', sans-serif;
@@ -18,7 +18,16 @@ input[type~="submit"] {
   border: 1px solid gray;
   background-color: transparent;
   border-radius: 0;
-  padding: 1em;
+  padding: .55em;
+  font-size: 1em;
+  -moz-transition: all ease .2s;
+  -webkit-transition: all ease .2s;
+  -o-transition: all ease .2s;
+  transition: all ease .2s;
+}
+
+input[type~="submit"]:hover {
+  background: #eee;
 }
 
 #user-search {
@@ -28,28 +37,29 @@ input[type~="submit"] {
 }
 
 .tweet-wrapper {
-  padding: 2em;
+  padding: 1.5em;
   background: #eee;
   border-bottom: 1px solid gray;
-
 }
 
 .profile-image {
 }
 
 .profile-image img {
-  /*height: auto;
-  width: 20%*/;
+  height: auto;
+  width: 10%;
 }
 
 .user-name {
-  font-weight: 300;
+  margin: 0 auto;
 }
 
 .user-handle {
-  font-weight: 300;
+  margin: 0 auto 1% auto;
 }
 
 .tweet-text {
-
+  width: 50%;
+  margin: 0 auto;
+  font-weight: 300;
 }

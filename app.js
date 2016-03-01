@@ -12,6 +12,7 @@ app.set('view engine', 'jade');
 app.use(morgan('dev'));
 app.use(express.static(__dirname + '/public'));
 
+//Routes
 router.get('/', function(req, res) {
   res.render('index', { title: 'Twitter Search' });
 });
@@ -38,16 +39,16 @@ io.on('connect', function(socket) {
   socket.on('updatedTerm', function(searchTerm) {
     socket.emit('updatedTerm', searchTerm);
 
-    //Reset stream for new search
+    //Reset stream for new search term
     if(stream) {
       stream.stop();
     }
 
     stream = twitter.stream('statuses/filter', { track: searchTerm, language: 'en'});
 
-    //gets info from Twitter
+    //gets info from Twitter & starts new stream
     stream.on('tweet', function(tweet) {
-      console.log(tweet);
+      // console.log(tweet);
       var data = {};
       data.name = tweet.user.name;
       data.screen_name = tweet.user.screen_name;
